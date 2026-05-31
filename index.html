@@ -43,6 +43,7 @@ body {
   background: var(--bg);
   position: relative;
   overflow: hidden;
+  min-height: 0;
 }
 
 slide.active { display: flex; }
@@ -151,6 +152,8 @@ slide.content .content-body {
   color: var(--muted);
   line-height: 1.8;
   max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 slide.content .content-highlight {
@@ -461,40 +464,48 @@ slide.end .accent-bar {
   slide.cover .meta { font-size: 14px; bottom: 40px; }
   slide.cover img { width: 80px !important; height: 80px !important; }
 
-  slide.content { padding: 60px 32px; }
-  slide.content .content-title { font-size: 32px; }
-  slide.content .content-body { font-size: 18px; }
+  slide.content { padding: 60px 32px; flex-direction: column; overflow-y: auto; }
+  slide.content .content-title { font-size: 32px; max-width: 100%; }
+  slide.content .content-body { font-size: 18px; max-width: 100%; word-wrap: break-word; overflow-wrap: break-word; }
   slide.content .content-label { font-size: 14px; }
 
-  slide.split { flex-direction: column; padding: 40px 32px; }
-  slide.split .split-visual { width: 100%; height: 200px; margin-bottom: 24px; }
-  slide.split .split-text { padding-left: 0; }
-  slide.split .split-title { font-size: 28px; }
+  slide.split { flex-direction: column; padding: 40px 32px; overflow-y: auto; }
+  slide.split .split-left { width: 100%; min-height: auto; padding: 32px; }
+  slide.split .split-right { width: 100%; min-height: auto; padding: 32px; }
+  slide.split .split-title { font-size: 26px; }
+  slide.split .split-body { font-size: 15px; }
 
-  slide.section { padding: 0 60px; }
+  slide.section { padding: 0 40px; overflow-y: auto; }
   slide.section .section-number { font-size: 72px; }
   slide.section .section-title { font-size: 40px; }
   slide.section .section-desc { font-size: 16px; }
 
-  slide.data { padding: 60px 32px; }
+  slide.data { padding: 60px 32px; overflow-y: auto; }
   slide.data .data-grid { flex-direction: column; }
   slide.data .data-number { font-size: 48px; }
   slide.data .data-label { font-size: 18px; }
   slide.data .data-desc { font-size: 14px; }
 
-  slide.image-text { flex-direction: column; padding: 40px 32px; }
-  slide.image-text .image-text-img { width: 100%; height: 200px; margin-bottom: 24px; }
-  slide.image-text .image-text-title { font-size: 24px; }
+  slide.image-text { flex-direction: column; padding: 40px 32px; overflow-y: auto; }
+  slide.image-text .image-area { width: 100%; height: 160px; flex: none; }
+  slide.image-text .text-area { width: 100%; padding: 24px 0 0 0; flex: none; }
+  slide.image-text .text-title { font-size: 22px; }
+  slide.image-text .text-list li { font-size: 16px; }
 
-  slide.quote .quote-text { font-size: 24px; }
-  slide.quote .quote-author { font-size: 16px; }
+  slide.quote { padding: 40px 32px; overflow-y: auto; justify-content: center; }
+  slide.quote .quote-mark { font-size: 100px; }
+  slide.quote .quote-text { font-size: 22px; }
+  slide.quote .quote-author { font-size: 14px; margin-top: 24px; }
 
+  slide.end { overflow-y: auto; }
   slide.end .end-title { font-size: 64px; }
   slide.end .end-sub { font-size: 18px; }
 
+  .nav { bottom: 20px; }
   .nav-dot { width: 8px; height: 8px; }
-  .counter { font-size: 14px; }
+  .counter { font-size: 14px; right: 20px; bottom: 20px; }
   .arrows { display: none; }
+  .touch-hint { display: block; }
 }
 
 @media screen and (max-width: 480px) {
@@ -519,19 +530,17 @@ slide.end .accent-bar {
 }
 
 /* Touch hint animation for mobile */
-@media (hover: none) and (pointer: coarse) {
-  .touch-hint {
-    display: block;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--muted);
-    font-size: 14px;
-    opacity: 0.6;
-    animation: swipe-hint 2s ease-in-out infinite;
-    z-index: 100;
-  }
+.touch-hint {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 14px;
+  opacity: 0.6;
+  animation: swipe-hint 2s ease-in-out infinite;
+  z-index: 100;
 }
 
 @keyframes swipe-hint {

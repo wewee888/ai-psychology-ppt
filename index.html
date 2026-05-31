@@ -464,9 +464,9 @@ slide.end .accent-bar {
 
 /* Mobile Responsive - Kenya Hara minimal style */
 @media screen and (max-width: 768px) {
-  .presentation { align-items: flex-start; height: auto; }
+  .presentation { align-items: stretch; height: 100dvh; }
 
-  slide { height: auto; overflow-y: auto; }
+  slide { height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
   /* Cover */
   slide.cover { min-height: 100vh; padding: 48px 24px 40px; justify-content: center; }
@@ -477,23 +477,22 @@ slide.end .accent-bar {
   slide.cover .accent-line { height: 32px; margin-bottom: 16px; }
 
   /* Content - Kenya Hara minimal spacing */
-  slide.content { padding: 36px 20px; justify-content: flex-start; }
+  slide.content { padding: 36px 20px; justify-content: center; }
   slide.content .content-label { font-size: 10px; margin-bottom: 12px; letter-spacing: 0.2em; }
   slide.content .content-title { font-size: 20px; margin-bottom: 12px; line-height: 1.25; }
   slide.content .content-body { font-size: 13px; line-height: 1.55; }
 
-  /* Split - compress each panel, fit both in view */
-  slide.split { flex-direction: column; padding: 0; height: 100vh; overflow: hidden; }
+  /* Split - each panel fills viewport, content vertically centered */
+  slide.split { flex-direction: column; height: 100dvh; }
   slide.split .split-left, slide.split .split-right {
-    padding: 24px 24px 20px;
-    min-height: 50vh;
-    max-height: 50vh;
-    flex: none;
+    padding: 32px 24px 24px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    min-height: 0;
     overflow: hidden;
   }
   slide.split .split-left { background: var(--ink); }

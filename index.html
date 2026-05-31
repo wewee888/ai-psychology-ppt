@@ -484,10 +484,21 @@ slide.end .accent-bar {
 
   /* Split - compress each panel, fit both in view */
   slide.split { flex-direction: column; padding: 0; }
-  slide.split .split-left, slide.split .split-right { padding: 20px 20px 16px; min-height: auto; height: auto; flex: none; }
-  slide.split .split-number { font-size: 10px; margin-bottom: 8px; }
-  slide.split .split-title { font-size: 17px; margin-bottom: 8px; line-height: 1.25; }
-  slide.split .split-body { font-size: 12px; line-height: 1.45; }
+  slide.split .split-left, slide.split .split-right {
+    padding: 24px 24px 20px;
+    min-height: auto;
+    height: auto;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  slide.split .split-left { background: var(--ink); }
+  slide.split .split-number { font-size: 11px; margin-bottom: 10px; align-self: center; }
+  slide.split .split-title { font-size: 20px; margin-bottom: 10px; line-height: 1.3; text-align: center; }
+  slide.split .split-body { font-size: 13px; line-height: 1.55; text-align: center; }
 
   /* Section */
   slide.section { padding: 0 24px; justify-content: center; }
@@ -545,9 +556,9 @@ slide.end .accent-bar {
   slide.content .content-body { font-size: 12px; }
   slide.content .content-label { font-size: 9px; }
 
-  slide.split .split-left, slide.split .split-right { padding: 16px 16px 14px; }
-  slide.split .split-title { font-size: 15px; }
-  slide.split .split-body { font-size: 11px; }
+  slide.split .split-left, slide.split .split-right { padding: 18px 18px 16px; }
+  slide.split .split-title { font-size: 18px; }
+  slide.split .split-body { font-size: 12px; }
 
   slide.section { padding: 0 20px; }
   slide.section .section-number { font-size: 36px; }

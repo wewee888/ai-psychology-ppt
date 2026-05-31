@@ -462,108 +462,112 @@ slide.end .accent-bar {
   fill: var(--ink);
 }
 
-/* Mobile Responsive - compact fit-first */
+/* Mobile Responsive - Kenya Hara minimal style */
 @media screen and (max-width: 768px) {
   .presentation { align-items: flex-start; height: auto; }
 
   slide { height: auto; overflow-y: auto; }
 
-  /* Cover - compact hero */
-  slide.cover { min-height: 100vh; padding: 40px 24px; justify-content: center; }
-  slide.cover .hero-text { font-size: 36px; margin-bottom: 12px; }
-  slide.cover .subtitle { font-size: 14px; margin-bottom: 8px; }
-  slide.cover .meta { font-size: 11px; bottom: 24px; }
-  slide.cover img { width: 60px !important; height: 60px !important; margin-bottom: 12px; }
-  slide.cover .accent-line { height: 40px; margin-bottom: 20px; }
+  /* Cover */
+  slide.cover { min-height: 100vh; padding: 48px 24px 40px; justify-content: center; }
+  slide.cover .hero-text { font-size: 32px; margin-bottom: 10px; }
+  slide.cover .subtitle { font-size: 13px; margin-bottom: 6px; letter-spacing: 0.1em; }
+  slide.cover .meta { font-size: 10px; bottom: 20px; }
+  slide.cover img { width: 56px !important; height: 56px !important; margin-bottom: 10px; }
+  slide.cover .accent-line { height: 32px; margin-bottom: 16px; }
 
-  /* Content - tighter spacing */
-  slide.content { padding: 32px 20px; }
-  slide.content .content-label { font-size: 11px; margin-bottom: 16px; }
-  slide.content .content-title { font-size: 22px; margin-bottom: 16px; line-height: 1.3; }
-  slide.content .content-body { font-size: 14px; line-height: 1.6; }
+  /* Content - Kenya Hara minimal spacing */
+  slide.content { padding: 36px 20px; justify-content: flex-start; }
+  slide.content .content-label { font-size: 10px; margin-bottom: 12px; letter-spacing: 0.2em; }
+  slide.content .content-title { font-size: 20px; margin-bottom: 12px; line-height: 1.25; }
+  slide.content .content-body { font-size: 13px; line-height: 1.55; }
 
-  /* Split - stacked but compact */
+  /* Split - compress each panel, fit both in view */
   slide.split { flex-direction: column; padding: 0; }
-  slide.split .split-left, slide.split .split-right { padding: 24px 20px; min-height: auto; }
-  slide.split .split-number { font-size: 11px; margin-bottom: 12px; }
-  slide.split .split-title { font-size: 20px; margin-bottom: 12px; line-height: 1.3; }
-  slide.split .split-body { font-size: 13px; line-height: 1.5; }
+  slide.split .split-left, slide.split .split-right { padding: 20px 20px 16px; min-height: auto; height: auto; flex: none; }
+  slide.split .split-number { font-size: 10px; margin-bottom: 8px; }
+  slide.split .split-title { font-size: 17px; margin-bottom: 8px; line-height: 1.25; }
+  slide.split .split-body { font-size: 12px; line-height: 1.45; }
 
   /* Section */
-  slide.section { padding: 0 24px; }
-  slide.section .section-number { font-size: 48px; margin-bottom: 12px; }
-  slide.section .section-title { font-size: 28px; margin-bottom: 10px; }
-  slide.section .section-desc { font-size: 13px; }
+  slide.section { padding: 0 24px; justify-content: center; }
+  slide.section .section-number { font-size: 44px; margin-bottom: 8px; }
+  slide.section .section-title { font-size: 26px; margin-bottom: 8px; }
+  slide.section .section-desc { font-size: 12px; line-height: 1.5; }
 
-  /* Data - single column */
-  slide.data { padding: 32px 20px; }
-  slide.data .content-label { font-size: 11px; margin-bottom: 16px; }
-  slide.data .content-title { font-size: 22px; margin-bottom: 20px; }
-  slide.data .data-grid { flex-direction: column; gap: 20px; margin-top: 0; }
-  slide.data .data-number { font-size: 36px; margin-bottom: 6px; }
-  slide.data .data-label { font-size: 14px; }
-  slide.data .data-desc { font-size: 12px; margin-top: 4px; }
+  /* Data - compressed grid */
+  slide.data { padding: 36px 20px; }
+  slide.data .content-label { font-size: 10px; margin-bottom: 12px; }
+  slide.data .content-title { font-size: 20px; margin-bottom: 16px; }
+  slide.data .data-grid { flex-direction: column; gap: 16px; margin-top: 0; }
+  slide.data .data-number { font-size: 32px; margin-bottom: 4px; }
+  slide.data .data-label { font-size: 13px; line-height: 1.3; }
+  slide.data .data-desc { font-size: 11px; margin-top: 2px; line-height: 1.4; }
 
-  /* Image-text */
+  /* Image-text - compact */
   slide.image-text { flex-direction: column; padding: 0; }
-  slide.image-text .image-area { height: 100px; flex: none; }
-  slide.image-text .image-area .icon-large { font-size: 50px; }
-  slide.image-text .text-area { padding: 20px 20px; }
-  slide.image-text .content-label { font-size: 11px; }
-  slide.image-text .text-title { font-size: 18px; margin-bottom: 14px; }
-  slide.image-text .text-list li { font-size: 13px; margin-bottom: 10px; }
+  slide.image-text .image-area { height: auto; min-height: 60px; flex: none; }
+  slide.image-text .image-area .icon-large { font-size: 40px; }
+  slide.image-text .text-area { padding: 16px 20px; height: auto; flex: none; }
+  slide.image-text .content-label { font-size: 10px; margin-bottom: 8px; }
+  slide.image-text .text-title { font-size: 17px; margin-bottom: 10px; line-height: 1.25; }
+  slide.image-text .text-list li { font-size: 12px; margin-bottom: 8px; line-height: 1.4; padding-left: 16px; }
 
-  /* Quote */
-  slide.quote { padding: 24px 20px; }
-  slide.quote .quote-mark { font-size: 60px; margin-bottom: 12px; }
-  slide.quote .quote-text { font-size: 16px; line-height: 1.5; }
-  slide.quote .quote-author { font-size: 11px; margin-top: 16px; }
+  /* Quote - minimal */
+  slide.quote { padding: 32px 20px; }
+  slide.quote .quote-mark { font-size: 48px; margin-bottom: 8px; line-height: 1; }
+  slide.quote .quote-text { font-size: 15px; line-height: 1.45; }
+  slide.quote .quote-author { font-size: 10px; margin-top: 12px; }
 
   /* End */
   slide.end { min-height: 100vh; }
-  slide.end .end-title { font-size: 48px; }
-  slide.end .end-sub { font-size: 14px; }
-  slide.end .accent-bar { width: 40px; height: 2px; margin-bottom: 20px; }
+  slide.end .end-title { font-size: 44px; }
+  slide.end .end-sub { font-size: 13px; letter-spacing: 0.15em; }
+  slide.end .accent-bar { width: 36px; height: 2px; margin-bottom: 16px; }
 
   /* Nav */
-  .nav { bottom: 12px; gap: 5px; }
+  .nav { bottom: 10px; gap: 4px; }
   .nav-dot { width: 5px; height: 5px; }
-  .counter { font-size: 11px; right: 12px; bottom: 12px; }
+  .counter { font-size: 10px; right: 10px; bottom: 10px; }
   .arrows { display: none; }
-  .touch-hint { display: block; font-size: 11px; bottom: 12px; }
+  .touch-hint { display: block; font-size: 10px; bottom: 10px; }
 }
 
 @media screen and (max-width: 480px) {
-  slide.cover .hero-text { font-size: 30px; }
+  slide.cover .hero-text { font-size: 28px; }
   slide.cover .subtitle { font-size: 12px; }
-  slide.cover img { width: 50px !important; height: 50px !important; }
-  slide.cover .accent-line { height: 30px; }
+  slide.cover img { width: 48px !important; height: 48px !important; }
+  slide.cover .accent-line { height: 28px; }
+  slide.cover .meta { font-size: 9px; }
 
-  slide.content { padding: 24px 16px; }
-  slide.content .content-title { font-size: 20px; }
-  slide.content .content-body { font-size: 13px; }
-  slide.content .content-label { font-size: 10px; }
+  slide.content { padding: 28px 16px; }
+  slide.content .content-title { font-size: 18px; }
+  slide.content .content-body { font-size: 12px; }
+  slide.content .content-label { font-size: 9px; }
 
-  slide.split .split-left, slide.split .split-right { padding: 20px 16px; }
-  slide.split .split-title { font-size: 18px; }
-  slide.split .split-body { font-size: 12px; }
+  slide.split .split-left, slide.split .split-right { padding: 16px 16px 14px; }
+  slide.split .split-title { font-size: 15px; }
+  slide.split .split-body { font-size: 11px; }
 
   slide.section { padding: 0 20px; }
-  slide.section .section-number { font-size: 40px; }
-  slide.section .section-title { font-size: 24px; }
+  slide.section .section-number { font-size: 36px; }
+  slide.section .section-title { font-size: 22px; }
+  slide.section .section-desc { font-size: 11px; }
 
-  slide.data .data-number { font-size: 32px; }
-  slide.data .data-label { font-size: 13px; }
+  slide.data .data-number { font-size: 28px; }
+  slide.data .data-label { font-size: 12px; }
+  slide.data .data-desc { font-size: 10px; }
 
-  slide.image-text .image-area { height: 80px; }
-  slide.image-text .text-title { font-size: 16px; }
-  slide.image-text .text-list li { font-size: 12px; }
+  slide.image-text .image-area { height: 64px; }
+  slide.image-text .text-title { font-size: 15px; }
+  slide.image-text .text-list li { font-size: 11px; }
 
-  slide.quote { padding: 20px 16px; }
+  slide.quote { padding: 24px 16px; }
   slide.quote .quote-text { font-size: 14px; }
-  slide.quote .quote-mark { font-size: 48px; }
+  slide.quote .quote-mark { font-size: 40px; }
+  slide.quote .quote-author { font-size: 9px; }
 
-  .touch-hint { font-size: 10px; }
+  .touch-hint { font-size: 9px; }
 }
 
 @supports (padding: env(safe-area-inset-top)) {
